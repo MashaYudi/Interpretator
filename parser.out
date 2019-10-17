@@ -1,0 +1,279 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> line
+Rule 1     line -> SND evalue
+Rule 2     line -> SET reg evalue
+Rule 3     line -> JGZ evalue evalue
+Rule 4     line -> ADD reg evalue
+Rule 5     line -> RCV evalue
+Rule 6     line -> MUL reg evalue
+Rule 7     line -> MOD reg evalue
+Rule 8     reg -> LETTER
+Rule 9     evalue -> reg
+Rule 10    evalue -> NUMBER
+
+Terminals, with rules where they appear
+
+ADD                  : 4
+JGZ                  : 3
+LETTER               : 8
+MOD                  : 7
+MUL                  : 6
+NUMBER               : 10
+RCV                  : 5
+SET                  : 2
+SND                  : 1
+error                : 
+
+Nonterminals, with rules where they appear
+
+evalue               : 1 2 3 3 4 5 6 7
+line                 : 0
+reg                  : 2 4 6 7 9
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . line
+    (1) line -> . SND evalue
+    (2) line -> . SET reg evalue
+    (3) line -> . JGZ evalue evalue
+    (4) line -> . ADD reg evalue
+    (5) line -> . RCV evalue
+    (6) line -> . MUL reg evalue
+    (7) line -> . MOD reg evalue
+
+    SND             shift and go to state 2
+    SET             shift and go to state 3
+    JGZ             shift and go to state 4
+    ADD             shift and go to state 5
+    RCV             shift and go to state 6
+    MUL             shift and go to state 7
+    MOD             shift and go to state 8
+
+    line                           shift and go to state 1
+
+state 1
+
+    (0) S' -> line .
+
+
+
+state 2
+
+    (1) line -> SND . evalue
+    (9) evalue -> . reg
+    (10) evalue -> . NUMBER
+    (8) reg -> . LETTER
+
+    NUMBER          shift and go to state 11
+    LETTER          shift and go to state 12
+
+    evalue                         shift and go to state 9
+    reg                            shift and go to state 10
+
+state 3
+
+    (2) line -> SET . reg evalue
+    (8) reg -> . LETTER
+
+    LETTER          shift and go to state 12
+
+    reg                            shift and go to state 13
+
+state 4
+
+    (3) line -> JGZ . evalue evalue
+    (9) evalue -> . reg
+    (10) evalue -> . NUMBER
+    (8) reg -> . LETTER
+
+    NUMBER          shift and go to state 11
+    LETTER          shift and go to state 12
+
+    evalue                         shift and go to state 14
+    reg                            shift and go to state 10
+
+state 5
+
+    (4) line -> ADD . reg evalue
+    (8) reg -> . LETTER
+
+    LETTER          shift and go to state 12
+
+    reg                            shift and go to state 15
+
+state 6
+
+    (5) line -> RCV . evalue
+    (9) evalue -> . reg
+    (10) evalue -> . NUMBER
+    (8) reg -> . LETTER
+
+    NUMBER          shift and go to state 11
+    LETTER          shift and go to state 12
+
+    evalue                         shift and go to state 16
+    reg                            shift and go to state 10
+
+state 7
+
+    (6) line -> MUL . reg evalue
+    (8) reg -> . LETTER
+
+    LETTER          shift and go to state 12
+
+    reg                            shift and go to state 17
+
+state 8
+
+    (7) line -> MOD . reg evalue
+    (8) reg -> . LETTER
+
+    LETTER          shift and go to state 12
+
+    reg                            shift and go to state 18
+
+state 9
+
+    (1) line -> SND evalue .
+
+    $end            reduce using rule 1 (line -> SND evalue .)
+
+
+state 10
+
+    (9) evalue -> reg .
+
+    $end            reduce using rule 9 (evalue -> reg .)
+    NUMBER          reduce using rule 9 (evalue -> reg .)
+    LETTER          reduce using rule 9 (evalue -> reg .)
+
+
+state 11
+
+    (10) evalue -> NUMBER .
+
+    $end            reduce using rule 10 (evalue -> NUMBER .)
+    NUMBER          reduce using rule 10 (evalue -> NUMBER .)
+    LETTER          reduce using rule 10 (evalue -> NUMBER .)
+
+
+state 12
+
+    (8) reg -> LETTER .
+
+    $end            reduce using rule 8 (reg -> LETTER .)
+    NUMBER          reduce using rule 8 (reg -> LETTER .)
+    LETTER          reduce using rule 8 (reg -> LETTER .)
+
+
+state 13
+
+    (2) line -> SET reg . evalue
+    (9) evalue -> . reg
+    (10) evalue -> . NUMBER
+    (8) reg -> . LETTER
+
+    NUMBER          shift and go to state 11
+    LETTER          shift and go to state 12
+
+    reg                            shift and go to state 10
+    evalue                         shift and go to state 19
+
+state 14
+
+    (3) line -> JGZ evalue . evalue
+    (9) evalue -> . reg
+    (10) evalue -> . NUMBER
+    (8) reg -> . LETTER
+
+    NUMBER          shift and go to state 11
+    LETTER          shift and go to state 12
+
+    evalue                         shift and go to state 20
+    reg                            shift and go to state 10
+
+state 15
+
+    (4) line -> ADD reg . evalue
+    (9) evalue -> . reg
+    (10) evalue -> . NUMBER
+    (8) reg -> . LETTER
+
+    NUMBER          shift and go to state 11
+    LETTER          shift and go to state 12
+
+    reg                            shift and go to state 10
+    evalue                         shift and go to state 21
+
+state 16
+
+    (5) line -> RCV evalue .
+
+    $end            reduce using rule 5 (line -> RCV evalue .)
+
+
+state 17
+
+    (6) line -> MUL reg . evalue
+    (9) evalue -> . reg
+    (10) evalue -> . NUMBER
+    (8) reg -> . LETTER
+
+    NUMBER          shift and go to state 11
+    LETTER          shift and go to state 12
+
+    reg                            shift and go to state 10
+    evalue                         shift and go to state 22
+
+state 18
+
+    (7) line -> MOD reg . evalue
+    (9) evalue -> . reg
+    (10) evalue -> . NUMBER
+    (8) reg -> . LETTER
+
+    NUMBER          shift and go to state 11
+    LETTER          shift and go to state 12
+
+    reg                            shift and go to state 10
+    evalue                         shift and go to state 23
+
+state 19
+
+    (2) line -> SET reg evalue .
+
+    $end            reduce using rule 2 (line -> SET reg evalue .)
+
+
+state 20
+
+    (3) line -> JGZ evalue evalue .
+
+    $end            reduce using rule 3 (line -> JGZ evalue evalue .)
+
+
+state 21
+
+    (4) line -> ADD reg evalue .
+
+    $end            reduce using rule 4 (line -> ADD reg evalue .)
+
+
+state 22
+
+    (6) line -> MUL reg evalue .
+
+    $end            reduce using rule 6 (line -> MUL reg evalue .)
+
+
+state 23
+
+    (7) line -> MOD reg evalue .
+
+    $end            reduce using rule 7 (line -> MOD reg evalue .)
+
