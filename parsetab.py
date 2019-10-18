@@ -27,14 +27,14 @@ for _k, _v in _lr_goto_items.items():
 del _lr_goto_items
 _lr_productions = [
   ("S' -> line","S'",1,None,None,None),
-  ('line -> SND evalue','line',2,'p_SND','myParser.py',12),
-  ('line -> SET reg evalue','line',3,'p_SET','myParser.py',19),
-  ('line -> JGZ evalue evalue','line',3,'p_JGZ','myParser.py',24),
-  ('line -> ADD reg evalue','line',3,'p_ADD','myParser.py',33),
+  ('line -> SND evalue','line',2,'p_SND','myParser.py',11),
+  ('line -> SET reg evalue','line',3,'p_SET','myParser.py',18),
+  ('line -> JGZ evalue evalue','line',3,'p_JGZ','myParser.py',23),
+  ('line -> ADD reg evalue','line',3,'p_ADD','myParser.py',32),
   ('line -> RCV evalue','line',2,'p_RCV','myParser.py',38),
   ('line -> MUL reg evalue','line',3,'p_MUL','myParser.py',44),
-  ('line -> MOD reg evalue','line',3,'p_MOD','myParser.py',49),
-  ('reg -> LETTER','reg',1,'p_reg_let','myParser.py',54),
-  ('evalue -> reg','evalue',1,'p_eval_reg','myParser.py',59),
-  ('evalue -> NUMBER','evalue',1,'p_eval_num','myParser.py',64),
+  ('line -> MOD reg evalue','line',3,'p_MOD','myParser.py',50),
+  ('reg -> LETTER','reg',1,'p_reg_let','myParser.py',56),
+  ('evalue -> reg','evalue',1,'p_eval_reg','myParser.py',61),
+  ('evalue -> NUMBER','evalue',1,'p_eval_num','myParser.py',67),
 ]

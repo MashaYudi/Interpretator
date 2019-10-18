@@ -11,7 +11,7 @@ def p_SND(p):
     'line : SND evalue'
     global last_sound
     last_sound = p[2]
-    print(f"sound of {p[2]} frequency played")
+    print(f"sound of frequency {p[2]} played")
 
 
 def p_SET(p):
@@ -37,7 +37,7 @@ def p_ADD(p):
 def p_RCV(p):
     'line : RCV evalue'
     if (p[2] != 0):
-        print(f"frequancy of last played sound: {last_sound}")
+        print(f"frequency of last played sound: {last_sound}")
 
 
 def p_MUL(p):
