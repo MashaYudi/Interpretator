@@ -1,4 +1,4 @@
-set a 1
+set bd 1
 add a 2
 mul a a
 mod a 5
